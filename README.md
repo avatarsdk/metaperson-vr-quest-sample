@@ -19,3 +19,17 @@ You need to complete the following steps before experimenting with this sample:
 
 Now you are ready to go:
 * Clone this repository to your computer
+* Open the project in Unity 2021.3.19f1 or above.
+* Open an `Assets/AvatarSDK/MetaPerson/VRQuestSample/Scenes/VRQuestMetaPersonSample.unity` scene.
+* Find a `SceneHandler` object in the `Hierarchy`, provide `Client Id` and `Client Secret` to `Account Credentials` component.
+![Provide Client Credentials](./Documentation/Images/credentials_in_unity.JPG "Provide Client Credentials")
+* Import the [Vuplex Web View for Android with Gecko Engine](https://store.vuplex.com/webview/android-gecko) plugin if you have it.
+* Install the [MetaPerson Creator android application](TBD) if you are going to use it.
+* Build and run a Quest application with the `Assets/AvatarSDK/MetaPerson/VRQuestSample/Scenes/VRQuestMetaPersonSample.unity` scene.
+
+Inside the application:
+* Press the `Show Web Page` button to show [MetaPerson Creator](https://metaperson.avatarsdk.com/) page if you have imported the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin.
+* Or you can run the [MetaPerson Creator android application](TBD) by pressing the `Run Application` button.
+![UI of the sample](./Documentation/Images/sample_ui.JPG "UI of the sample")
+* You can select any of sample models or log in to use your personal avatar.
+* Once you finished avatar's customization, press an `Export` button to download it and show in the VR sample scene.
