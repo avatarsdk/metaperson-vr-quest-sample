@@ -152,7 +152,7 @@ namespace AvatarSDK.MetaPerson.QuestSample
 			catch (Exception exc)
 			{
 				Debug.LogErrorFormat("Unable to parse message: {0}. Exception: {1}", args.Value, exc);
-				errorText.text = "Unable to load a model";
+				errorText.text = "Unable to load the model";
 				canvas.SetActive(false);
 			}
 		}

@@ -37,7 +37,8 @@ namespace AvatarSDK.MetaPerson.QuestSample
 
 			try
 			{
-				Application.OpenURL(string.Format("metaperson://get_avatar?clientId={0}&clientSecret={1}", credentials.clientId, credentials.clientSecret));
+				Application.OpenURL(string.Format("metaperson://get_avatar?clientId={0}&clientSecret={1}&format=glb&lod=2&textureProfile=1K.jpg", 
+					credentials.clientId, credentials.clientSecret));
 			}
 			catch(Exception exc)
 			{
