@@ -122,8 +122,8 @@ This sample exports avatars in **GLB** format and uses the [glTFast](https://git
 The exported model URL contains a link to a ZIP archive. So the archive is extracted before the model is loaded.<br/>
 ### Materials
 The [MetaPersonMaterialGenerator](./Assets/AvatarSDK/MetaPerson/ModelLoader/Scripts/MetaPersonMaterialGenerator.cs) object configures the avatar's materials. 
-Specific materials are used for `haircuts` and `eyelashes`, other meshes are rendered with the `DefaultMaterial`.
-![MetaPerson Loader Configuration](./Documentation/Images/meta_person_loader.JPG "MetaPerson Loader Configuration")
+Specific materials are used for `haircuts` and `eyelashes`, other meshes are rendered with the `DefaultMaterial`.<br/>
+![MetaPerson Loader Configuration](./Documentation/Images/meta_person_loader.JPG "MetaPerson Loader Configuration")<br/>
 You can extend this class for your needs.
 
 ## Support
