@@ -49,7 +49,7 @@ namespace AvatarSDK.MetaPerson.QuestSample
 
 		public void OnGetDetailsButtonClick()
 		{
-			Application.OpenURL("https://docs.avatarsdk.com/");
+			Application.OpenURL("https://github.com/avatarsdk/metaperson-vr-quest-sample#importing-avatar-from-metaperson-creator-app");
 		}
 
 		private void Start()

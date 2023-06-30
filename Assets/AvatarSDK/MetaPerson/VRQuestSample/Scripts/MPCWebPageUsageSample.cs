@@ -51,7 +51,7 @@ namespace AvatarSDK.MetaPerson.QuestSample
 
 		public void OnGetDetailsButtonClick()
 		{
-			Application.OpenURL("https://docs.avatarsdk.com/");
+			Application.OpenURL("https://github.com/avatarsdk/metaperson-vr-quest-sample#importing-avatar-from-web-page");
 		}
 
 		public void OnCloseButtonClick()
@@ -169,7 +169,7 @@ namespace AvatarSDK.MetaPerson.QuestSample
 
 		public void OnGetDetailsButtonClick()
 		{
-			Application.OpenURL("https://docs.avatarsdk.com/");
+			Application.OpenURL("https://github.com/avatarsdk/metaperson-vr-quest-sample#importing-avatar-from-web-page");
 		}
 	}
 #endif
