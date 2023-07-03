@@ -15,7 +15,7 @@ You need to complete the following steps before experimenting with this sample:
 * Get an AvatarSDK developer account at https://accounts.avatarsdk.com/developer/signup/
 * Create an application with Client credentials Authorization Grant at https://accounts.avatarsdk.com/developer/
 * Copy `App Client ID` and `App Client Secret` from the Client Access application at https://accounts.avatarsdk.com/developer/
-![App Client Credentials](./Documentation/Images/credentials.jpg "App Client Credentials")
+![App Client Credentials](./Documentation/Images/credentials.JPG "App Client Credentials")
 
 Now you are ready to go:
 * Clone this repository to your computer
