@@ -15,7 +15,7 @@ You need to complete the following steps before experimenting with this sample:
 * Get an AvatarSDK developer account at https://accounts.avatarsdk.com/developer/signup/
 * Create an application with Client credentials Authorization Grant at https://accounts.avatarsdk.com/developer/
 * Copy `App Client ID` and `App Client Secret` from the Client Access application at https://accounts.avatarsdk.com/developer/
-![App Client Credentials](./Documentation/Images/credentials.png "App Client Credentials")
+![App Client Credentials](./Documentation/Images/credentials.jpg "App Client Credentials")
 
 Now you are ready to go:
 * Clone this repository to your computer
@@ -31,8 +31,8 @@ Inside the application:
 * Press the `Show Web Page` button to show [MetaPerson Creator](https://metaperson.avatarsdk.com/) page if you have imported the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin.
 * Or you can run the [MetaPerson Creator android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk) by pressing the `Run Application` button.
 ![UI of the sample](./Documentation/Images/sample_ui.JPG "UI of the sample")
-* You can select any of the sample models or create personal avatar.
-* Once you finished an avatar's customization, press an `Export` button to download it and show it in the VR sample scene.
+* You can select any of the sample models or create a personal avatar.
+* Once you finished an avatar's customization, press the `Export` button to download it and show it in the VR sample scene.
 ![Exporting model](./Documentation/Images/exporting_model.gif "Exporting model")
 
 ## How It Works
@@ -40,7 +40,7 @@ Inside the application:
 [MetaPerson Creator](https://metaperson.avatarsdk.com/) page can be shown in a Web View component. This samples uses the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko). 
 You can use any other Web View component that best suits you.
 * Load the following page in a Web View: https://metaperson.avatarsdk.com/iframe.html
-* Once the page is loaded this Java Script code should be executed:
+* Before the page is loaded this Java Script code should be executed. It subscribes to some events and posts messages with authentication and export parameters.
 ```js
 const CLIENT_ID = "your_client_id";
 const CLIENT_SECRET = "your_client_secret";
