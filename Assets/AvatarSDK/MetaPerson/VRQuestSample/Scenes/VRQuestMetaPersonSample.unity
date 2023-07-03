@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   credentials: {fileID: 1017341907}
   canvas: {fileID: 803180542}
-  canvasWebViewPrefab: {fileID: 114949863286487459}
+  canvasWebViewObject: {fileID: 1535822385242225}
   progressText: {fileID: 1120550989}
   errorText: {fileID: 2093827362}
   metaPersonLoader: {fileID: 1851901393}

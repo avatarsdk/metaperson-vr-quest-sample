@@ -28,7 +28,7 @@ namespace AvatarSDK.MetaPerson.QuestSample
 
 		public GameObject canvas;
 
-		public CanvasWebViewPrefab canvasWebViewPrefab;
+		public GameObject canvasWebViewObject;
 
 		public Text progressText;
 
@@ -36,7 +36,14 @@ namespace AvatarSDK.MetaPerson.QuestSample
 
 		public MetaPersonLoader metaPersonLoader;
 
+		private CanvasWebViewPrefab canvasWebViewPrefab;
+
 		private bool isWebViewInitialized = false;
+
+		private void Start()
+		{
+			canvasWebViewPrefab = canvasWebViewObject.GetComponent<CanvasWebViewPrefab>();
+		}
 
 		public void OnImportAvatarButtonClick()
 		{
@@ -160,7 +167,17 @@ namespace AvatarSDK.MetaPerson.QuestSample
 #else
 	public class MPCWebPageUsageSample : MonoBehaviour
 	{
+		public AccountCredentials credentials;
+
+		public GameObject canvas;
+
+		public GameObject canvasWebViewObject;
+
+		public Text progressText;
+
 		public Text errorText;
+
+		public MetaPersonLoader metaPersonLoader;
 
 		public void OnImportAvatarButtonClick()
 		{
