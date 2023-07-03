@@ -79,19 +79,18 @@ namespace AvatarSDK.MetaPerson.QuestSample
 				canvasWebViewPrefab.LogConsoleMessages = true;
 
 				await canvasWebViewPrefab.WaitUntilInitialized();
-				canvasWebViewPrefab.WebView.LoadProgressChanged += OnLoadProgressChanged;
 				canvasWebViewPrefab.WebView.LoadUrl(url);
 				canvasWebViewPrefab.DragMode = DragMode.DragWithinPage;
+
+				ConfigureJSApi();
 
 				isWebViewInitialized = true;
 			}
 		}
 
-		private void OnLoadProgressChanged(object sender, ProgressChangedEventArgs args)
+		private void ConfigureJSApi()
 		{
-			if (args.Type == ProgressChangeType.Finished)
-			{
-				string javaScriptCode = @"
+			string javaScriptCode = @"
 					const CLIENT_ID = '" + credentials.clientId + @"';
 					const CLIENT_SECRET = '" + credentials.clientSecret + @"';
 
@@ -131,9 +130,8 @@ namespace AvatarSDK.MetaPerson.QuestSample
 					window.addEventListener('message', onWindowMessage);
 				";
 
-				canvasWebViewPrefab.WebView.MessageEmitted += OnWebViewMessageReceived;
-				canvasWebViewPrefab.WebView.ExecuteJavaScript(javaScriptCode, OnJavaScriptExecuted);
-			}
+			canvasWebViewPrefab.WebView.MessageEmitted += OnWebViewMessageReceived;
+			canvasWebViewPrefab.WebView.ExecuteJavaScript(javaScriptCode, OnJavaScriptExecuted);
 		}
 
 		private void OnJavaScriptExecuted(string executionResult)
