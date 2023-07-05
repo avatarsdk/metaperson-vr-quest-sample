@@ -47,7 +47,7 @@ const CLIENT_SECRET = "your_client_secret";
 
 function onWindowMessage(evt) {
 	if (evt.type === 'message') {
-		if (evt.data?.source === 'metaperson_editor') {
+		if (evt.data?.source === 'metaperson_creator') {
 			let data = evt.data;
 			let evtName = data?.eventName;
 			if (evtName === 'unity_loaded') {

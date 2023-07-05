@@ -96,7 +96,7 @@ namespace AvatarSDK.MetaPerson.QuestSample
 
 					function onWindowMessage(evt) {
 						if (evt.type === 'message') {
-							if (evt.data?.source === 'metaperson_editor') {
+							if (evt.data?.source === 'metaperson_creator') {
 								let data = evt.data;
 								let evtName = data?.eventName;
 								if (evtName === 'unity_loaded') {
@@ -125,6 +125,13 @@ namespace AvatarSDK.MetaPerson.QuestSample
 							'textureProfile': '1K.jpg'
 						};
 						evt.source.postMessage(exportParametersMessage, '*');
+
+						let uiParametersMessage = {
+							'eventName': 'set_ui_parameters',
+							'isExportButtonVisible' : true,
+							'closeExportDialogWhenExportComlpeted' : true,
+						  };
+						evt.source.postMessage(uiParametersMessage, '*');
 					}
 
 					window.addEventListener('message', onWindowMessage);
@@ -146,7 +153,7 @@ namespace AvatarSDK.MetaPerson.QuestSample
 			try
 			{
 				ModelExportedEvent modelExportedEvent = JsonUtility.FromJson<ModelExportedEvent>(args.Value);
-				if (modelExportedEvent.eventName == "model_exported" && modelExportedEvent.source == "metaperson_editor")
+				if (modelExportedEvent.eventName == "model_exported" && modelExportedEvent.source == "metaperson_creator")
 				{
 					Debug.LogFormat("Model exported: {0}", modelExportedEvent.url);
 					canvas.SetActive(false);
