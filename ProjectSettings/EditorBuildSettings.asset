@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/AvatarSDK/MetaPerson/VRQuestSample/Scenes/VRQuestMetaPersonSample.unity
+    path: Assets/AvatarSDK/MetaPerson/VRQuestIntegrationSample/Scenes/MetaPersonCreatorVRQuestIntegrationSample.unity
     guid: 03e6b4deaa768004abb97d60a434cf7b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 553dd7faa3821aa47a859b989b49c95d, type: 2}

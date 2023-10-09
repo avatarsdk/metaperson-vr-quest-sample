@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Vuplex.WebView;
 
-namespace AvatarSDK.MetaPerson.QuestSample
+namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 {
 	public class VuplexKeyboardExtension : MonoBehaviour
 	{
