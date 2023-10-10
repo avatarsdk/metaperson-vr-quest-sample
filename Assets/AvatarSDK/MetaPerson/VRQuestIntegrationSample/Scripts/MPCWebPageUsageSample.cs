@@ -103,6 +103,7 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 									onUnityLoaded(evt, data);
 								} else if (evtName === 'model_exported') {
 									console.log('model url: ' + data.url);
+									console.log('gender: ' + data.gender);
 									window.vuplex.postMessage(evt.data);
 								}
 							}
@@ -113,8 +114,7 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 						let authenticationMessage = {
 							'eventName': 'authenticate',
 							'clientId': CLIENT_ID,
-							'clientSecret': CLIENT_SECRET,
-							'exportTemplateCode': '',
+							'clientSecret': CLIENT_SECRET
 						};
 						window.postMessage(authenticationMessage, '*');
 

@@ -42,7 +42,8 @@ Follow these steps to obtain them:
 
 2. Open the project in Unity 2021.3.19f1 or above.
 
-3. Open an `Assets/AvatarSDK/MetaPerson/VRQuestIntegrationSample/Scenes/MetaPersonCreatorVRQuestIntegrationSample.unity` scene.
+3. Open the scene:
+`Assets/AvatarSDK/MetaPerson/VRQuestIntegrationSample/Scenes/MetaPersonCreatorVRQuestIntegrationSample.unity`
 
 4. Find a `SceneHandler` object in the `Hierarchy` and provide `Client Id` and `Client Secret` to `Account Credentials` component.
 ![Provide Client Credentials](./Documentation/Images/credentials_in_unity.JPG "Provide Client Credentials")
@@ -61,15 +62,22 @@ Follow these steps to obtain them:
 
 3. Select any of the sample models or create a your own avatar.
 
-4. Once you finished an avatar's customization, press the `Export` button to download it and show it in the VR sample scene.
+4. Once you completed avatar customization, press the `Export` button to download it and show it in the VR sample scene.
 ![Exporting model](./Documentation/Images/exporting_model.gif "Exporting model")
 
 ## How It Works
+
 ### Importing Avatar From Web Page
-[MetaPerson Creator](https://metaperson.avatarsdk.com/) page can be shown in a Web View component. This sample uses the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko). 
-You can use any other Web View component that best suits you.
-* Load the following page in a Web View: https://metaperson.avatarsdk.com/iframe.html
-* Before the page is loaded this JavaScript code should be executed. It subscribes to some events and posts messages with authentication and export parameters.
+To integrate the [MetaPerson Creator](https://metaperson.avatarsdk.com/iframe.html) page into VR Quest application, it should be shown in a WebView component. 
+This sample uses the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) for this purpose.
+
+The communication between [MetaPerson Creator](https://metaperson.avatarsdk.com/iframe.html) and Unity is carried out through the use of the [JS API](https://docs.metaperson.avatarsdk.com/js_api.html).
+
+Here's how it works:
+
+1. Load the following page in a WebView component: `https://metaperson.avatarsdk.com/iframe.html`.
+
+2. Prior to loading the page, execute the following JavaScript code. This code subscribes to events from the [MetaPerson Creator](https://metaperson.avatarsdk.com/iframe.html) page and posts messages with authentication, export, and UI parameters:
 ```js
 const CLIENT_ID = "your_client_id";
 const CLIENT_SECRET = "your_client_secret";
@@ -83,6 +91,7 @@ function onWindowMessage(evt) {
 				onUnityLoaded(evt, data);
 			} else if (evtName === 'model_exported') {
 				console.log('model url: ' + data.url);
+				console.log('gender: ' + data.gender);
 				window.vuplex.postMessage(evt.data);
 			}
 		}
@@ -93,8 +102,7 @@ function onUnityLoaded(evt, data) {
 	let authenticationMessage = {
 		'eventName': 'authenticate',
 		'clientId': CLIENT_ID,
-		'clientSecret': CLIENT_SECRET,
-		'exportTemplateCode': '',
+		'clientSecret': CLIENT_SECRET
 	};
 	window.postMessage(authenticationMessage, '*');
 
@@ -105,14 +113,22 @@ function onUnityLoaded(evt, data) {
 		'textureProfile': '1K.jpg'
 	};
 	evt.source.postMessage(exportParametersMessage, '*');
+	
+	let uiParametersMessage = {
+		'eventName': 'set_ui_parameters',
+		'isExportButtonVisible' : true,
+		'closeExportDialogWhenExportComlpeted' : true,
+	};
+	evt.source.postMessage(uiParametersMessage, '*');
 }
 
 window.addEventListener('message', onWindowMessage);
 ```
-* Client credentials and [export parameters](#export-parameters) are specified in the `onUnityLoaded` method.
-* `onWindowMessage` method is executed when the [MetaPerson Creator](https://metaperson.avatarsdk.com/) page sends messages.
-* When an avatar model is exported, the corresponding `model_exported` event is received with a URL of this model. 
-* [Model Loader](#model-loader) is used to load the model by its URL and display it in the scene.
+
+* The **onUnityLoaded** method sets your client credentials and [export parameters](#js-api-parameters).
+* The **onWindowMessage** method handles messages received from the [MetaPerson Creator](https://metaperson.avatarsdk.com/iframe.html) page.
+* When an avatar model is exported, the corresponding **model_exported** event is received, including the URL of the model and its gender.
+* Upon receiving the **model_exported** event, the model is loaded into the scene using its URL.
 
 [See more information about JS API](https://docs.metaperson.avatarsdk.com/js_api.html)
 
