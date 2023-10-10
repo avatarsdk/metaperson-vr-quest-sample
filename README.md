@@ -1,13 +1,23 @@
 # MetaPerson - VR Oculus Quest Sample
-This sample demonstrates how to embed the [MetaPerson Creator](https://metaperson.avatarsdk.com/) into Oculus Quest VR applications and export an avatar from it.
-There are two ways of integration. 
-1. Showing the [MetaPerson Creator](https://metaperson.avatarsdk.com/) in a Web View component.<br/>
-There is no default Unity Web View control for Oculus Quest applications. So you should use any of the 3rd party solutions.
-We recommend using a [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin that is paid.
+This sample demonstrates how to integrate the [MetaPerson Creator](https://metaperson.avatarsdk.com/) web page into **Oculus Quest** VR applications and export an avatar from it.
 
-2. Installing a [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk)<br/>
-This application has similar features to the [MetaPerson Creator](https://metaperson.avatarsdk.com/) and can be run from your application instead of showing a web page.
-The application is not available in the Oculus Quest Store for now and is distributed as an APK file. So this way is best suited for evaluation and testing purposes while you didn't implement a solution with a Web View.
+### Integration Methods
+There are two ways to integrate the [MetaPerson Creator](https://metaperson.avatarsdk.com/) into your Oculus Quest VR application:
+
+**1. Showing the [MetaPerson Creator](https://metaperson.avatarsdk.com/) in a Web View component.**
+
+To display the [MetaPerson Creator](https://metaperson.avatarsdk.com/) web page within your application, you can use a Web View component. 
+However, Unity does not provide a built-in Web View control for Oculus Quest applications, so you'll need to use a 3rd-party solution.
+
+We recommend using the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin, which is a paid solution.
+
+**2. Installing a [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk)**
+
+An alternative approach is to install the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) directly on the Oculus Quest device. 
+This application offers similar features to the web-based [MetaPerson Creator](https://metaperson.avatarsdk.com/) and can be run from your application, eliminating the need for a Web View component.
+
+**Note:** As of now, the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) is not available in the Oculus Quest Store and is distributed as an APK file. 
+This method is ideal for evaluation and testing purposes, especially if you haven't implemented a solution using a Web View.
 
 ## Getting Started.
 You need to complete the following steps before experimenting with this sample:
@@ -24,12 +34,12 @@ Now you are ready to go:
 * Find a `SceneHandler` object in the `Hierarchy` and provide `Client Id` and `Client Secret` to `Account Credentials` component.
 ![Provide Client Credentials](./Documentation/Images/credentials_in_unity.JPG "Provide Client Credentials")
 * Import the [Vuplex Web View for Android with Gecko Engine](https://store.vuplex.com/webview/android-gecko) plugin if you have it.
-* Install the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk) if you are going to use it.
+* Install the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) if you are going to use it.
 * Build and run a Quest application with the `Assets/AvatarSDK/MetaPerson/VRQuestSample/Scenes/VRQuestMetaPersonSample.unity` scene.
 
 Inside the application:
 * Press the `Show Web Page` button to show the [MetaPerson Creator](https://metaperson.avatarsdk.com/) page if you have imported the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin.
-* Or you can run the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk) by pressing the `Run Application` button.
+* Or you can run the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) by pressing the `Run Application` button.
 ![UI of the sample](./Documentation/Images/sample_ui.JPG "UI of the sample")
 * You can select any of the sample models or create a personal avatar.
 * Once you finished an avatar's customization, press the `Export` button to download it and show it in the VR sample scene.
@@ -90,9 +100,9 @@ window.addEventListener('message', onWindowMessage);
 Implementation details can be found in the [MPCWebPageUsageSample.cs script](./Assets/AvatarSDK/MetaPerson/VRQuestSample/Scripts/MPCWebPageUsageSample.cs).
 
 ### Importing Avatar From MetaPerson Creator App
-The [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk) should be installed on an Oculus device.<br/>
-Communication between a VR application and the [MetaPerson Creator](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk) is performed by using [deep links](https://docs.unity3d.com/Manual/deep-linking.html).
-* Use the following code to run the [MetaPerson Creator app](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk). The deep link contains client credentials and [export parameters](#export-parameters).
+The [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) should be installed on an Oculus device.<br/>
+Communication between a VR application and the [MetaPerson Creator](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) is performed by using [deep links](https://docs.unity3d.com/Manual/deep-linking.html).
+* Use the following code to run the [MetaPerson Creator app](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk). The deep link contains client credentials and [export parameters](#export-parameters).
 ```c#
 Application.OpenURL("metaperson://get_avatar?clientId=your_client_id&clientSecret=your_client_secret&format=glb&lod=2&textureProfile=1K.jpg");
 ```
