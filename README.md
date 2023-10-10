@@ -20,29 +20,48 @@ This application offers similar features to the web-based [MetaPerson Creator](h
 This method is ideal for evaluation and testing purposes, especially if you haven't implemented a solution using a Web View.
 
 ## Getting Started.
-You need to complete the following steps before experimenting with this sample:
 
-* Get an AvatarSDK developer account at https://accounts.avatarsdk.com/developer/signup/
-* Create an application with Client credentials Authorization Grant at https://accounts.avatarsdk.com/developer/
-* Copy the `App Client ID` and `App Client Secret` from the Client Access application at https://accounts.avatarsdk.com/developer/
+### Account Credentials
+First, you need AvatarSDK developer account credentials to export models from the [MetaPerson Creator](https://metaperson.avatarsdk.com/). 
+
+Follow these steps to obtain them:
+
+1. **Create an AvatarSDK Developer Account.**
+   Visit the [AvatarSDK Developer Signup page](https://accounts.avatarsdk.com/developer/signup/) to create your AvatarSDK developer account. If you already have an account, you can skip this step.
+
+2. **Create an Application.**
+   After successfully registering or logging in to your AvatarSDK developer account, go to the [Developer Dashboard](https://accounts.avatarsdk.com/developer/). Here, create a new application. 
+
+3. **Retrieve Your App Client ID and App Client Secret.**
+   Once your application is created, you can obtain your **App Client ID** and **App Client Secret** from the Developer Dashboard.
 ![App Client Credentials](./Documentation/Images/credentials.JPG "App Client Credentials")
 
-Now you are ready to go:
-* Clone this repository to your computer
-* Open the project in Unity 2021.3.19f1 or above.
-* Open an `Assets/AvatarSDK/MetaPerson/VRQuestSample/Scenes/VRQuestMetaPersonSample.unity` scene.
-* Find a `SceneHandler` object in the `Hierarchy` and provide `Client Id` and `Client Secret` to `Account Credentials` component.
-![Provide Client Credentials](./Documentation/Images/credentials_in_unity.JPG "Provide Client Credentials")
-* Import the [Vuplex Web View for Android with Gecko Engine](https://store.vuplex.com/webview/android-gecko) plugin if you have it.
-* Install the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) if you are going to use it.
-* Build and run a Quest application with the `Assets/AvatarSDK/MetaPerson/VRQuestSample/Scenes/VRQuestMetaPersonSample.unity` scene.
+### Run Sample
 
-Inside the application:
-* Press the `Show Web Page` button to show the [MetaPerson Creator](https://metaperson.avatarsdk.com/) page if you have imported the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin.
-* Or you can run the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) by pressing the `Run Application` button.
+1. Clone this repository to your computer
+
+2. Open the project in Unity 2021.3.19f1 or above.
+
+3. Open an `Assets/AvatarSDK/MetaPerson/VRQuestIntegrationSample/Scenes/MetaPersonCreatorVRQuestIntegrationSample.unity` scene.
+
+4. Find a `SceneHandler` object in the `Hierarchy` and provide `Client Id` and `Client Secret` to `Account Credentials` component.
+![Provide Client Credentials](./Documentation/Images/credentials_in_unity.JPG "Provide Client Credentials")
+
+5. Import the [Vuplex Web View for Android with Gecko Engine](https://store.vuplex.com/webview/android-gecko) plugin if you have it.
+
+6. Install the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) if you are going to use it.
+
+7. Build and run a Quest application with the `Assets/AvatarSDK/MetaPerson/VRQuestIntegrationSample/Scenes/MetaPersonCreatorVRQuestIntegrationSample.unity` scene.
+
+### Importing Model Into Application
+1. Press the `Show Web Page` button to show the [MetaPerson Creator](https://metaperson.avatarsdk.com/) page if you have imported the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin.
+
+2. Or you can run the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) by pressing the `Run Application` button.
 ![UI of the sample](./Documentation/Images/sample_ui.JPG "UI of the sample")
-* You can select any of the sample models or create a personal avatar.
-* Once you finished an avatar's customization, press the `Export` button to download it and show it in the VR sample scene.
+
+3. Select any of the sample models or create a your own avatar.
+
+4. Once you finished an avatar's customization, press the `Export` button to download it and show it in the VR sample scene.
 ![Exporting model](./Documentation/Images/exporting_model.gif "Exporting model")
 
 ## How It Works
