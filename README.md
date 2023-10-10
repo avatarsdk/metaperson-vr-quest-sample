@@ -163,13 +163,7 @@ Export parameters allow you to customize the output of the exported avatar by sp
 **4K.webp**, **2K.webp**, **1K.webp**.
 
 ## Model Loader
-This sample exports avatars in **GLB** format and uses the [glTFast](https://github.com/atteneder/glTFast) plugin to load models.<br/> 
-The exported model URL contains a link to a ZIP archive. So the archive is extracted before the model is loaded.<br/>
-### Materials
-The [MetaPersonMaterialGenerator](./Assets/AvatarSDK/MetaPerson/ModelLoader/Scripts/MetaPersonMaterialGenerator.cs) object configures the avatar's materials. 
-Specific materials are used for `haircuts` and `eyelashes`, other meshes are rendered with the `DefaultMaterial`.<br/>
-![MetaPerson Loader Configuration](./Documentation/Images/meta_person_loader.JPG "MetaPerson Loader Configuration")<br/>
-You can extend this class for your needs.
+This sample uses [MetaPerson Loader](https://github.com/avatarsdk/metaperson-loader-unity) to show avatar model on the scene.
 
 ## Support
 If you have any questions or issues with the plugin, please contact us <support@avatarsdk.com>.
