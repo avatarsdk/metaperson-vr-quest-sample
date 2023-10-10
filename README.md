@@ -1,46 +1,83 @@
 # MetaPerson - VR Oculus Quest Sample
-This sample demonstrates how to embed the [MetaPerson Creator](https://metaperson.avatarsdk.com/) into Oculus Quest VR applications and export an avatar from it.
-There are two ways of integration. 
-1. Showing the [MetaPerson Creator](https://metaperson.avatarsdk.com/) in a Web View component.<br/>
-There is no default Unity Web View control for Oculus Quest applications. So you should use any of the 3rd party solutions.
-We recommend using a [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin that is paid.
+This sample demonstrates how to integrate the [MetaPerson Creator](https://metaperson.avatarsdk.com/) web page into **Oculus Quest** VR applications and export an avatar from it.
 
-2. Installing a [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk)<br/>
-This application has similar features to the [MetaPerson Creator](https://metaperson.avatarsdk.com/) and can be run from your application instead of showing a web page.
-The application is not available in the Oculus Quest Store for now and is distributed as an APK file. So this way is best suited for evaluation and testing purposes while you didn't implement a solution with a Web View.
+### Integration Methods
+There are two ways to integrate the [MetaPerson Creator](https://metaperson.avatarsdk.com/) into your Oculus Quest VR application:
+
+**1. Showing the [MetaPerson Creator](https://metaperson.avatarsdk.com/) in a Web View component.**
+
+To display the [MetaPerson Creator](https://metaperson.avatarsdk.com/) web page within your application, you can use a Web View component. 
+However, Unity does not provide a built-in Web View control for Oculus Quest applications, so you'll need to use a 3rd-party solution.
+
+We recommend using the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin, which is a paid solution.
+
+**2. Installing a [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk)**
+
+An alternative approach is to install the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) directly on the Oculus Quest device. 
+This application offers similar features to the web-based [MetaPerson Creator](https://metaperson.avatarsdk.com/) and can be run from your application, eliminating the need for a Web View component.
+
+**Note:** As of now, the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) is not available in the Oculus Quest Store and is distributed as an APK file. 
+This method is ideal for evaluation and testing purposes, especially if you haven't implemented a solution using a Web View.
 
 ## Getting Started.
-You need to complete the following steps before experimenting with this sample:
 
-* Get an AvatarSDK developer account at https://accounts.avatarsdk.com/developer/signup/
-* Create an application with Client credentials Authorization Grant at https://accounts.avatarsdk.com/developer/
-* Copy the `App Client ID` and `App Client Secret` from the Client Access application at https://accounts.avatarsdk.com/developer/
+### Account Credentials
+First, you need AvatarSDK developer account credentials to export models from the [MetaPerson Creator](https://metaperson.avatarsdk.com/). 
+
+Follow these steps to obtain them:
+
+1. **Create an AvatarSDK Developer Account.**
+   Visit the [AvatarSDK Developer Signup page](https://accounts.avatarsdk.com/developer/signup/) to create your AvatarSDK developer account. If you already have an account, you can skip this step.
+
+2. **Create an Application.**
+   After successfully registering or logging in to your AvatarSDK developer account, go to the [Developer Dashboard](https://accounts.avatarsdk.com/developer/). Here, create a new application. 
+
+3. **Retrieve Your App Client ID and App Client Secret.**
+   Once your application is created, you can obtain your **App Client ID** and **App Client Secret** from the Developer Dashboard.
 ![App Client Credentials](./Documentation/Images/credentials.JPG "App Client Credentials")
 
-Now you are ready to go:
-* Clone this repository to your computer
-* Open the project in Unity 2021.3.19f1 or above.
-* Open an `Assets/AvatarSDK/MetaPerson/VRQuestSample/Scenes/VRQuestMetaPersonSample.unity` scene.
-* Find a `SceneHandler` object in the `Hierarchy` and provide `Client Id` and `Client Secret` to `Account Credentials` component.
-![Provide Client Credentials](./Documentation/Images/credentials_in_unity.JPG "Provide Client Credentials")
-* Import the [Vuplex Web View for Android with Gecko Engine](https://store.vuplex.com/webview/android-gecko) plugin if you have it.
-* Install the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk) if you are going to use it.
-* Build and run a Quest application with the `Assets/AvatarSDK/MetaPerson/VRQuestSample/Scenes/VRQuestMetaPersonSample.unity` scene.
+### Run Sample
 
-Inside the application:
-* Press the `Show Web Page` button to show the [MetaPerson Creator](https://metaperson.avatarsdk.com/) page if you have imported the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin.
-* Or you can run the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk) by pressing the `Run Application` button.
+1. Clone this repository to your computer
+
+2. Open the project in Unity 2021.3.19f1 or above.
+
+3. Open the scene:
+`Assets/AvatarSDK/MetaPerson/VRQuestIntegrationSample/Scenes/MetaPersonCreatorVRQuestIntegrationSample.unity`
+
+4. Find a `SceneHandler` object in the `Hierarchy` and provide `Client Id` and `Client Secret` to `Account Credentials` component.
+![Provide Client Credentials](./Documentation/Images/credentials_in_unity.JPG "Provide Client Credentials")
+
+5. Import the [Vuplex Web View for Android with Gecko Engine](https://store.vuplex.com/webview/android-gecko) plugin if you have it.
+
+6. Install the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) if you are going to use it.
+
+7. Build and run a Quest application with the `Assets/AvatarSDK/MetaPerson/VRQuestIntegrationSample/Scenes/MetaPersonCreatorVRQuestIntegrationSample.unity` scene.
+
+### Importing Model Into Application
+1. Press the `Show Web Page` button to show the [MetaPerson Creator](https://metaperson.avatarsdk.com/) page if you have imported the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin.
+
+2. Or you can run the [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) by pressing the `Run Application` button.
 ![UI of the sample](./Documentation/Images/sample_ui.JPG "UI of the sample")
-* You can select any of the sample models or create a personal avatar.
-* Once you finished an avatar's customization, press the `Export` button to download it and show it in the VR sample scene.
+
+3. Select any of the sample models or create a your own avatar.
+
+4. Once you completed avatar customization, press the `Export` button to download it and show it in the VR sample scene.
 ![Exporting model](./Documentation/Images/exporting_model.gif "Exporting model")
 
 ## How It Works
+
 ### Importing Avatar From Web Page
-[MetaPerson Creator](https://metaperson.avatarsdk.com/) page can be shown in a Web View component. This sample uses the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko). 
-You can use any other Web View component that best suits you.
-* Load the following page in a Web View: https://metaperson.avatarsdk.com/iframe.html
-* Before the page is loaded this JavaScript code should be executed. It subscribes to some events and posts messages with authentication and export parameters.
+To integrate the [MetaPerson Creator](https://metaperson.avatarsdk.com/iframe.html) page into VR Quest application, it should be shown in a WebView component. 
+This sample uses the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) for this purpose.
+
+The communication between [MetaPerson Creator](https://metaperson.avatarsdk.com/iframe.html) and Unity is carried out through the use of the [JS API](https://docs.metaperson.avatarsdk.com/js_api.html).
+
+Here's how it works:
+
+1. Load the following page in a WebView component: `https://metaperson.avatarsdk.com/iframe.html`.
+
+2. Prior to loading the page, execute the following JavaScript code. This code subscribes to events from the [MetaPerson Creator](https://metaperson.avatarsdk.com/iframe.html) page and posts messages with authentication, export, and UI parameters:
 ```js
 const CLIENT_ID = "your_client_id";
 const CLIENT_SECRET = "your_client_secret";
@@ -54,6 +91,7 @@ function onWindowMessage(evt) {
 				onUnityLoaded(evt, data);
 			} else if (evtName === 'model_exported') {
 				console.log('model url: ' + data.url);
+				console.log('gender: ' + data.gender);
 				window.vuplex.postMessage(evt.data);
 			}
 		}
@@ -64,8 +102,7 @@ function onUnityLoaded(evt, data) {
 	let authenticationMessage = {
 		'eventName': 'authenticate',
 		'clientId': CLIENT_ID,
-		'clientSecret': CLIENT_SECRET,
-		'exportTemplateCode': '',
+		'clientSecret': CLIENT_SECRET
 	};
 	window.postMessage(authenticationMessage, '*');
 
@@ -76,23 +113,31 @@ function onUnityLoaded(evt, data) {
 		'textureProfile': '1K.jpg'
 	};
 	evt.source.postMessage(exportParametersMessage, '*');
+	
+	let uiParametersMessage = {
+		'eventName': 'set_ui_parameters',
+		'isExportButtonVisible' : true,
+		'closeExportDialogWhenExportComlpeted' : true,
+	};
+	evt.source.postMessage(uiParametersMessage, '*');
 }
 
 window.addEventListener('message', onWindowMessage);
 ```
-* Client credentials and [export parameters](#export-parameters) are specified in the `onUnityLoaded` method.
-* `onWindowMessage` method is executed when the [MetaPerson Creator](https://metaperson.avatarsdk.com/) page sends messages.
-* When an avatar model is exported, the corresponding `model_exported` event is received with a URL of this model. 
-* [Model Loader](#model-loader) is used to load the model by its URL and display it in the scene.
+
+* The **onUnityLoaded** method sets your client credentials and [export parameters](#js-api-parameters).
+* The **onWindowMessage** method handles messages received from the [MetaPerson Creator](https://metaperson.avatarsdk.com/iframe.html) page.
+* When an avatar model is exported, the corresponding **model_exported** event is received, including the URL of the model and its gender.
+* Upon receiving the **model_exported** event, the model is loaded into the scene using its URL.
 
 [See more information about JS API](https://docs.metaperson.avatarsdk.com/js_api.html)
 
 Implementation details can be found in the [MPCWebPageUsageSample.cs script](./Assets/AvatarSDK/MetaPerson/VRQuestSample/Scripts/MPCWebPageUsageSample.cs).
 
 ### Importing Avatar From MetaPerson Creator App
-The [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk) should be installed on an Oculus device.<br/>
-Communication between a VR application and the [MetaPerson Creator](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk) is performed by using [deep links](https://docs.unity3d.com/Manual/deep-linking.html).
-* Use the following code to run the [MetaPerson Creator app](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.5.0.apk). The deep link contains client credentials and [export parameters](#export-parameters).
+The [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) should be installed on an Oculus device.<br/>
+Communication between a VR application and the [MetaPerson Creator](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk) is performed by using [deep links](https://docs.unity3d.com/Manual/deep-linking.html).
+* Use the following code to run the [MetaPerson Creator app](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk). The deep link contains client credentials and [export parameters](#export-parameters).
 ```c#
 Application.OpenURL("metaperson://get_avatar?clientId=your_client_id&clientSecret=your_client_secret&format=glb&lod=2&textureProfile=1K.jpg");
 ```
@@ -118,13 +163,7 @@ Export parameters allow you to customize the output of the exported avatar by sp
 **4K.webp**, **2K.webp**, **1K.webp**.
 
 ## Model Loader
-This sample exports avatars in **GLB** format and uses the [glTFast](https://github.com/atteneder/glTFast) plugin to load models.<br/> 
-The exported model URL contains a link to a ZIP archive. So the archive is extracted before the model is loaded.<br/>
-### Materials
-The [MetaPersonMaterialGenerator](./Assets/AvatarSDK/MetaPerson/ModelLoader/Scripts/MetaPersonMaterialGenerator.cs) object configures the avatar's materials. 
-Specific materials are used for `haircuts` and `eyelashes`, other meshes are rendered with the `DefaultMaterial`.<br/>
-![MetaPerson Loader Configuration](./Documentation/Images/meta_person_loader.JPG "MetaPerson Loader Configuration")<br/>
-You can extend this class for your needs.
+This sample uses [MetaPerson Loader](https://github.com/avatarsdk/metaperson-loader-unity) to show avatar model on the scene.
 
 ## Support
 If you have any questions or issues with the plugin, please contact us <support@avatarsdk.com>.

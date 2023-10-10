@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/metaperson-vr-quest-sample/v15
+/obj/Debug
+/Logs
+/Library
+/UserSettings
+/Temp
+/metaperson-vr-quest-sample.sln
+/Assembly-CSharp.csproj
+/.vsconfig

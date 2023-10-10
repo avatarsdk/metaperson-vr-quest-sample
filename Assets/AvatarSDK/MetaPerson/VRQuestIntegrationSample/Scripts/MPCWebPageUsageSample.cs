@@ -8,7 +8,7 @@
 * Written by Itseez3D, Inc. <support@avatarsdk.com>, June 2023
 */
 
-using AvatarSDK.MetaPerson.ModelLoader;
+using AvatarSDK.MetaPerson.Loader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -19,7 +19,7 @@ using UnityEngine.UI;
 using Vuplex.WebView;
 #endif
 
-namespace AvatarSDK.MetaPerson.QuestSample
+namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 {
 #if VUPLEX_PLUGIN
 	public class MPCWebPageUsageSample : MonoBehaviour
@@ -103,6 +103,7 @@ namespace AvatarSDK.MetaPerson.QuestSample
 									onUnityLoaded(evt, data);
 								} else if (evtName === 'model_exported') {
 									console.log('model url: ' + data.url);
+									console.log('gender: ' + data.gender);
 									window.vuplex.postMessage(evt.data);
 								}
 							}
@@ -113,8 +114,7 @@ namespace AvatarSDK.MetaPerson.QuestSample
 						let authenticationMessage = {
 							'eventName': 'authenticate',
 							'clientId': CLIENT_ID,
-							'clientSecret': CLIENT_SECRET,
-							'exportTemplateCode': '',
+							'clientSecret': CLIENT_SECRET
 						};
 						window.postMessage(authenticationMessage, '*');
 

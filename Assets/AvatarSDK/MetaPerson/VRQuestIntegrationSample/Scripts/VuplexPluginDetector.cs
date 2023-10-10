@@ -17,7 +17,7 @@ using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-namespace AvatarSDK.MetaPerson.QuestSample
+namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 {
 	[InitializeOnLoad]
 	public class VuplexPluginDetector : Editor

@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: ItSeez3D Inc
-  productName: QuestMetaPersonSample
+  productName: MetaPersonCreatorVRQuestSample
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -137,6 +137,8 @@ PlayerSettings:
   bundleVersion: 0.1
   preloadedAssets:
   - {fileID: 0}
+  - {fileID: 11400000, guid: 553dd7faa3821aa47a859b989b49c95d, type: 2}
+  - {fileID: -7446685030523642644, guid: 6b3957eb78c5ae241b802536f35caf47, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -714,8 +716,8 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   webGLPowerPreference: 2
   scriptingDefineSymbols:
-    Android: VUPLEX_OCULUS;VUPLEX_XR_INTERACTION_TOOLKIT
-    Standalone: VUPLEX_XR_INTERACTION_TOOLKIT;VUPLEX_OCULUS
+    Android: 
+    Standalone: 
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

@@ -8,18 +8,21 @@
 * Written by Itseez3D, Inc. <support@avatarsdk.com>, June 2023
 */
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AvatarSDK.MetaPerson.QuestSample
+namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 {
-	[Serializable]
-	public class ModelExportedEvent
+	public class AccountCredentials : MonoBehaviour
 	{
-		public string eventName;
-		public string source;
-		public string url;
+		public string clientId;
+
+		public string clientSecret;
+
+		public bool IsEmpty()
+		{
+			return string.IsNullOrEmpty(clientId) || string.IsNullOrEmpty(clientSecret);
+		}
 	}
 }

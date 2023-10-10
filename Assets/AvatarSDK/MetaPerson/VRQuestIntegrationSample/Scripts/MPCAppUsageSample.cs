@@ -8,14 +8,14 @@
 * Written by Itseez3D, Inc. <support@avatarsdk.com>, May 2023
 */
 
-using AvatarSDK.MetaPerson.ModelLoader;
+using AvatarSDK.MetaPerson.Loader;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace AvatarSDK.MetaPerson.QuestSample
+namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 {
 	public class MPCAppUsageSample : MonoBehaviour
 	{
