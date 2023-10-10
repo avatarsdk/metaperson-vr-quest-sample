@@ -50,6 +50,11 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 
 		private async void Start()
 		{
+			if (canvasKeyboard == null)
+				canvasKeyboard = FindAnyObjectByType<CanvasKeyboard>();
+			if (canvasWebViewPrefab == null)
+				canvasWebViewPrefab = FindAnyObjectByType<CanvasWebViewPrefab>();
+
 			if (canvasKeyboard != null && canvasWebViewPrefab != null)
 			{
 				await canvasWebViewPrefab.WaitUntilInitialized();
