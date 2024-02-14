@@ -27,6 +27,8 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 
 		public MetaPersonLoader metaPersonLoader;
 
+		public RuntimeAnimatorController animatorController;
+
 		public void OnImportAvatarButtonClick()
 		{
 			if (credentials.IsEmpty())
@@ -66,8 +68,13 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 				string[] urlParsed = url.Split('?');
 				if (urlParsed.Length == 2)
 				{
-					await metaPersonLoader.LoadModelAsync(urlParsed[1], p => progressText.text = string.Format("Downloading avatar: {0}%", (int)(p * 100)));
+					bool isLoaded = await metaPersonLoader.LoadModelAsync(urlParsed[1], p => progressText.text = string.Format("Downloading avatar: {0}%", (int)(p * 100)));
 					progressText.text = string.Empty;
+
+					if (isLoaded)
+						ConfigureAnimation();
+					else
+						errorText.text = "Unable to load the model";
 				}
 			}
 			catch (Exception exc)
@@ -75,6 +82,13 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 				Debug.LogErrorFormat("Exception during parsing URL={0}. Error: {1}", url, exc);
 				errorText.text = "Unable to parse model's URL";
 			}
+		}
+
+		private void ConfigureAnimation()
+		{
+			HumanoidAnimatorBuilder humanoidAnimatorBuilder = new HumanoidAnimatorBuilder();
+			humanoidAnimatorBuilder.AddHumanoidAnimator(metaPersonLoader.avatarObject);
+			humanoidAnimatorBuilder.SetAnimatorController(animatorController, metaPersonLoader.avatarObject);
 		}
 	}
 }

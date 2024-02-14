@@ -36,6 +36,8 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 
 		public MetaPersonLoader metaPersonLoader;
 
+		public RuntimeAnimatorController animatorController;
+
 		private CanvasWebViewPrefab canvasWebViewPrefab;
 
 		private bool isWebViewInitialized = false;
@@ -157,8 +159,13 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 				{
 					Debug.LogFormat("Model exported: {0}", modelExportedEvent.url);
 					canvas.SetActive(false);
-					await metaPersonLoader.LoadModelAsync(modelExportedEvent.url, p => progressText.text = string.Format("Downloading avatar: {0}%", (int)(p * 100)));
+					bool isLoaded = await metaPersonLoader.LoadModelAsync(modelExportedEvent.url, p => progressText.text = string.Format("Downloading avatar: {0}%", (int)(p * 100)));
 					progressText.text = string.Empty;
+
+					if (isLoaded)
+						ConfigureAnimation();
+					else
+						errorText.text = "Unable to load the model";
 				}
 			}
 			catch (Exception exc)
@@ -167,6 +174,13 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 				errorText.text = "Unable to load the model";
 				canvas.SetActive(false);
 			}
+		}
+
+		private void ConfigureAnimation()
+		{
+			HumanoidAnimatorBuilder humanoidAnimatorBuilder = new HumanoidAnimatorBuilder();
+			humanoidAnimatorBuilder.AddHumanoidAnimator(metaPersonLoader.avatarObject);
+			humanoidAnimatorBuilder.SetAnimatorController(animatorController, metaPersonLoader.avatarObject);
 		}
 	}
 #else
@@ -183,6 +197,8 @@ namespace AvatarSDK.MetaPerson.VRQuestIntegrationSample
 		public Text errorText;
 
 		public MetaPersonLoader metaPersonLoader;
+
+		public RuntimeAnimatorController animatorController;
 
 		public void OnImportAvatarButtonClick()
 		{

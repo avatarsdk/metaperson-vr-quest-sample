@@ -1852,6 +1852,7 @@ MonoBehaviour:
   progressText: {fileID: 1120550989}
   errorText: {fileID: 2093827362}
   metaPersonLoader: {fileID: 633790631}
+  animatorController: {fileID: 9100000, guid: 20a95633b66cbc24c9635223a675ae09, type: 2}
 --- !u!4 &1017341903
 Transform:
   m_ObjectHideFlags: 0
@@ -1885,6 +1886,7 @@ MonoBehaviour:
   progressText: {fileID: 1120550989}
   errorText: {fileID: 2093827362}
   metaPersonLoader: {fileID: 633790631}
+  animatorController: {fileID: 9100000, guid: 20a95633b66cbc24c9635223a675ae09, type: 2}
 --- !u!114 &1017341907
 MonoBehaviour:
   m_ObjectHideFlags: 0
