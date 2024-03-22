@@ -9,7 +9,7 @@ There are two ways to integrate the [MetaPerson Creator](https://metaperson.avat
 To display the [MetaPerson Creator](https://metaperson.avatarsdk.com/) web page within your application, you can use a Web View component. 
 However, Unity does not provide a built-in Web View control for Oculus Quest applications, so you'll need to use a 3rd-party solution.
 
-We recommend using the [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin, which is a paid solution.
+The [Vuplex Web View](https://store.vuplex.com/webview/android-gecko) plugin is used in this sample. We can provide you with a **20% discount** coupon for this plugin. Please contact us <support@avatarsdk.com> to get it.
 
 **2. Installing a [MetaPerson Creator Android application](https://metaperson.avatarsdk.com/apps/android/com.itseez3d.metaperson.creator.1.9.0.apk)**
 
